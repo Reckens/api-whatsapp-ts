@@ -15,10 +15,10 @@ export class LeadCreate {
     phone,
   }: {
     message: string;
-    phone: string;
+    phone: string[];
   }) {
-    const responseDbSave = await this.leadRepository.save({ message, phone });//TODO DB
-    const responseExSave = await this.leadExternal.sendMsg({ message, phone });//TODO enviar a ws
-    return {responseDbSave, responseExSave};
+    // const responseDbSave = await this.leadRepository.save({ message, phone });//TODO DB
+    const responseExSave = await this.leadExternal.sendMsg({ message, phone }); //TODO enviar a ws
+    return { responseExSave };
   }
 }

@@ -10,7 +10,7 @@ export default interface LeadRepository {
     phone,
   }: {
     message: string;
-    phone: string;
+    phone: string[];
   }): Promise<Lead | undefined | null>;
   getDetail(id:string):Promise<Lead | null | undefined>
 }
